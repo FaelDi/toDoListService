@@ -9,7 +9,7 @@ import java.time.LocalTime;
 @ToString
 @Getter
 @Setter
-public class ErrorTemplate extends Object {
+public class ErrorTemplate {
     private final String message;
     private final LocalTime localTime;
 

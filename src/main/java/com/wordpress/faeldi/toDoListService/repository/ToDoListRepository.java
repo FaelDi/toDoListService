@@ -1,5 +1,6 @@
 package com.wordpress.faeldi.toDoListService.repository;
 
+import com.wordpress.faeldi.toDoListService.model.ItemBase;
 import com.wordpress.faeldi.toDoListService.model.ItemEntity;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -10,10 +11,10 @@ import org.springframework.data.repository.query.Param;
 
 import javax.transaction.Transactional;
 
-public interface ToDoListRepository extends CrudRepository<ItemEntity, Object> {
+public interface ToDoListRepository extends CrudRepository<ItemEntity, Long> {
 
     @Query(value = "select id,title,description from public.todo_list_item",nativeQuery = true)
-    public Page<ItemEntity> listItemsFromList(Pageable pageable);
+    public Page<ItemBase> listItemsFromList(Pageable pageable);
 
     @Transactional
     @Modifying

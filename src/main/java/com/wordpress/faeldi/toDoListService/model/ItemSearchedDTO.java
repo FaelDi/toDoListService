@@ -11,7 +11,7 @@ import java.io.Serializable;
 @Getter
 @Setter
 @AllArgsConstructor
-public class ItemSearchedDTO implements Serializable {
+public class ItemSearchedDTO implements Serializable,ItemBase {
 
     private String title;
 
